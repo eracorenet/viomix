@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 class CreateClassesTable extends Migration
 {
@@ -17,6 +18,16 @@ class CreateClassesTable extends Migration
             $table->id();
             $table->char('class', 4)->unique();
         });
+
+        DB::table('classes')->insert(
+            [
+                ['class' => 'A +'],
+                ['class' => 'A'],
+                ['class' => 'B'],
+                ['class' => 'C'],
+                ['class' => 'D']
+            ]
+        );
     }
 
     /**
