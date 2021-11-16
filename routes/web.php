@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ClassesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +16,23 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Laravel 8 routes
+//Route::get('/classes', [ClassesController::class, 'index']);
+//Route::get('/classes', 'App\Http\Controllers\ClassesController@index');
+
+//Pre Laravel 8 routes
+Route::get('/classes', 'ClassesController@index');
+
+/*
+Route::get('/classes', function() {
+    return ['A+', 'A', 'B', 'C', 'D'];
+});
+
+Route::get('/classes', function() {
+    return response()->json([
+        "Name" => "Abdelhameed Ayad",
+        "Company" => "EraCore.NET"
+    ]);
+});
+*/
