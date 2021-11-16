@@ -18,11 +18,11 @@ Route::get('/', function () {
 });
 
 //Laravel 8 routes
-//Route::get('/classes', [ClassesController::class, 'index']);
+Route::get('/classes', [ClassesController::class, 'index']);
 //Route::get('/classes', 'App\Http\Controllers\ClassesController@index');
 
 //Pre Laravel 8 routes
-Route::get('/classes', 'ClassesController@index');
+//Route::get('/classes', 'ClassesController@index');
 
 /*
 Route::get('/classes', function() {
